@@ -277,7 +277,7 @@ export function HeroSection() {
             <span className="hidden sm:block text-border/80" aria-hidden>
               |
             </span>
-            <span>Guaranteed Internships</span>
+            <span>Guaranteed Internship Opportunities</span>
             <span className="hidden sm:block text-border/80" aria-hidden>
               |
             </span>
