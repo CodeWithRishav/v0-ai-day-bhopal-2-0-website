@@ -145,7 +145,7 @@ export function ExpectSection() {
                       Guaranteed
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
-                      Internships
+                      Internship Opportunities
                     </span>
                   </div>
                   <h4 className="text-base sm:text-lg font-semibold text-foreground">
