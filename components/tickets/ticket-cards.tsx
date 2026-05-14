@@ -32,7 +32,7 @@ type Tier = {
 const tickets: Tier[] = [
   {
     name: "Builder Pass",
-    price: "₹179",
+    price: "₹299",
     description: "Affordable access. No swag included.",
     features: [
       "Full event access",
@@ -42,9 +42,10 @@ const tickets: Tier[] = [
     ],
     cta: "Buy your ticket",
     link: "https://www.commudle.com/fill-form/4704",
-    note: "Limited seats",
+    note: "Last passes available",
     icon: Ticket,
-    variant: "standard",
+    variant: "popular",
+    popular: true,
   },
   {
     name: "General Pass",
@@ -57,12 +58,11 @@ const tickets: Tier[] = [
       "Certificate of participation",
       "Swag included",
     ],
-    cta: "Buy your ticket",
+    cta: "Sold Out",
     link: "https://www.commudle.com/fill-form/4701",
-    popular: true,
-    note: "Offer ends soon",
+    note: "All passes claimed",
     icon: Star,
-    variant: "popular",
+    variant: "soldout",
   },
   {
     name: "Special Swag Pass",
@@ -92,10 +92,11 @@ const groupTicket: Tier = {
     "Event swag included",
     "Custom invoicing for teams",
   ],
-  cta: "Contact Team",
+  cta: "Sold Out",
   link: "https://wa.me/+918969879979",
+  note: "All passes claimed",
   icon: Users,
-  variant: "standard",
+  variant: "soldout",
 }
 
 const lnctTicket: Tier = {
@@ -107,10 +108,11 @@ const lnctTicket: Tier = {
     "Validated against LNCT student list",
     "College ID required at entry",
   ],
-  cta: "Register now",
+  cta: "Sold Out",
   link: "https://www.commudle.com/fill-form/4700",
+  note: "All passes claimed",
   icon: GraduationCap,
-  variant: "standard",
+  variant: "soldout",
 }
 
 function variantStyle(variant: Tier["variant"]) {

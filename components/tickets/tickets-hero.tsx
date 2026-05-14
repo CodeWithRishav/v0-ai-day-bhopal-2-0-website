@@ -62,11 +62,11 @@ export function TicketsHero() {
               <span className="absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-70 animate-ping" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
             </span>
-            Limited seats available
+            Only Builder Pass available — last few seats
           </span>
           <span className="inline-flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Group + LNCT-exclusive passes available
+            <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+            All other passes sold out
           </span>
         </FadeIn>
       </div>

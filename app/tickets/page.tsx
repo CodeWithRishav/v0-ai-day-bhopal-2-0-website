@@ -10,7 +10,7 @@ import { TicketFaq } from "@/components/tickets/ticket-faq"
 export const metadata: Metadata = {
   title: "Get Tickets | AI Day Bhopal 2.0",
   description:
-    "Secure your spot at Central India's biggest AI Builder event. Choose from Builder, General, Special Swag, Group, or LNCT-exclusive passes.",
+    "Almost every pass is sold out. Grab the Builder Pass — the last one open at ₹299 — and secure your seat at Central India's biggest AI Builder event.",
 }
 
 export default function TicketsPage() {

@@ -45,9 +45,9 @@ export default function TermsPage() {
               </h2>
               <p>
                 These terms apply to anyone purchasing a pass to, or attending,{" "}
-                {EVENT.name} — organised by ML Bhopal on {EVENT.dateLabel} at
-                the Oriental Auditorium, Bhopal. By buying a pass or showing up
-                at the venue, you agree to what&apos;s on this page.
+                {EVENT.name} — organised by ML Bhopal on {EVENT.dateLabel} at{" "}
+                {EVENT.venue.name}, {EVENT.venue.city}. By buying a pass or
+                showing up at the venue, you agree to what&apos;s on this page.
               </p>
             </section>
 

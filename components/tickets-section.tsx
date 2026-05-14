@@ -33,7 +33,7 @@ type Tier = {
 const tickets: Tier[] = [
   {
     name: "Builder Pass",
-    price: "₹179",
+    price: "₹299",
     description: "Affordable access. No swag included.",
     features: [
       "Full event access",
@@ -43,9 +43,10 @@ const tickets: Tier[] = [
     ],
     cta: "Buy your ticket",
     link: "https://www.commudle.com/fill-form/4704",
-    note: "Limited seats",
+    note: "Last passes available",
     icon: Ticket,
-    variant: "standard",
+    variant: "popular",
+    popular: true,
   },
   {
     name: "General Pass",
@@ -57,12 +58,11 @@ const tickets: Tier[] = [
       "Event swag included",
       "Certificate of participation",
     ],
-    cta: "Buy your ticket",
+    cta: "Sold Out",
     link: "https://www.commudle.com/fill-form/4701",
-    popular: true,
-    note: "Offer ends soon",
+    note: "All passes claimed",
     icon: Star,
-    variant: "popular",
+    variant: "soldout",
   },
   {
     name: "Special Swag Pass",
@@ -91,10 +91,11 @@ const groupTicket: Tier = {
     "Event swag included",
     "Custom invoicing for teams",
   ],
-  cta: "Contact Team",
+  cta: "Sold Out",
   link: "https://wa.me/+918969879979",
+  note: "All passes claimed",
   icon: Users,
-  variant: "standard",
+  variant: "soldout",
 }
 
 const lnctTicket: Tier = {
@@ -105,10 +106,11 @@ const lnctTicket: Tier = {
     "Validated against LNCT student list",
     "College ID required at entry",
   ],
-  cta: "Register",
+  cta: "Sold Out",
   link: "https://www.commudle.com/fill-form/4700",
+  note: "All passes claimed",
   icon: GraduationCap,
-  variant: "standard",
+  variant: "soldout",
 }
 
 function variantStyle(variant: Tier["variant"]) {
@@ -263,11 +265,11 @@ export function TicketsSection() {
             <span className="h-px w-6 bg-primary/60" />
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 text-balance">
-            Pick a pass. Skip the FOMO.
+            Last passes. Don't sleep on it.
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Same room, same talks, same lunch — choose how much swag you walk
-            home with. Group + LNCT options below if either fits.
+            Almost every pass is sold out. The Builder Pass is the last one open
+            — grab a seat before it goes too.
           </p>
         </FadeIn>
 
