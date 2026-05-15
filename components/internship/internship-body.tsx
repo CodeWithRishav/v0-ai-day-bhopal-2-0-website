@@ -1,8 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Briefcase, Globe, ExternalLink } from "lucide-react"
+import { Briefcase, Globe, ExternalLink, Copy, Check } from "lucide-react"
 import { FadeIn } from "@/components/motion"
 import { Button } from "@/components/ui/button"
 import {
@@ -100,6 +101,18 @@ function PartnerDetailCard({ partner }: { partner: Partner }) {
 }
 
 export function InternshipBody() {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyFormLink = async () => {
+    try {
+      await navigator.clipboard.writeText(INTERNSHIP_FORM_URL)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2000)
+    } catch {
+      setCopied(false)
+    }
+  }
+
   return (
     <>
       <section className="relative overflow-hidden pt-32 pb-14">
@@ -182,8 +195,8 @@ export function InternshipBody() {
               <span className="text-gradient-amber">Polyform</span>
             </h2>
             <p className="text-muted-foreground">
-              Submit the form below, or open it in a new tab if the embed
-              doesn&apos;t load on your network.
+              Open the Polyform link in a new tab to apply. Copy the URL if you
+              want to share it or open it elsewhere.
             </p>
           </FadeIn>
 
@@ -207,25 +220,36 @@ export function InternshipBody() {
               </Button>
             </div>
 
-            <p className="break-all text-center text-xs text-muted-foreground">
-              <a
-                href={INTERNSHIP_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-primary underline-offset-2 hover:underline"
-              >
-                {INTERNSHIP_FORM_URL}
-              </a>
-            </p>
-
-            <div className="overflow-hidden rounded-2xl border border-border/80 bg-background/40 shadow-[0_0_40px_rgba(0,0,0,0.12)] dark:shadow-[0_0_50px_rgba(0,0,0,0.35)]">
-              <iframe
-                src={INTERNSHIP_FORM_URL}
-                title="AI Day Bhopal 2.0 — Internship & Opportunities Form (Polyform)"
-                className="min-h-[720px] w-full sm:min-h-[800px]"
-                loading="lazy"
-                allow="clipboard-write"
-              />
+            <div className="overflow-hidden rounded-2xl border border-border/80 bg-background/40 px-4 py-4 shadow-[0_0_40px_rgba(0,0,0,0.12)] dark:shadow-[0_0_50px_rgba(0,0,0,0.35)]">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <a
+                  href={INTERNSHIP_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="min-w-0 flex-1 break-all text-left text-sm font-mono text-primary underline-offset-2 hover:underline sm:text-base"
+                >
+                  {INTERNSHIP_FORM_URL}
+                </a>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="shrink-0 gap-2 self-stretch sm:self-auto"
+                  onClick={handleCopyFormLink}
+                >
+                  {copied ? (
+                    <>
+                      <Check className="h-4 w-4" aria-hidden />
+                      Copied
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-4 w-4" aria-hidden />
+                      Copy link
+                    </>
+                  )}
+                </Button>
+              </div>
             </div>
           </FadeIn>
         </div>
