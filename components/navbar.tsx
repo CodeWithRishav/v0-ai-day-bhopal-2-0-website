@@ -76,6 +76,26 @@ export function Navbar() {
                 </Link>
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.05 + navLinks.length * 0.05,
+                duration: 0.3,
+              }}
+            >
+              <Link
+                href="/internship"
+                className={`relative px-3 py-2 text-sm font-medium transition-colors group ${
+                  pathname === "/internship"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Internship
+                <span className="absolute left-3 right-3 -bottom-px h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
+            </motion.div>
           </div>
 
           {/* Desktop CTAs */}
@@ -161,6 +181,13 @@ export function Navbar() {
                     </Link>
                   </motion.div>
                 ))}
+                <Link
+                  href="/internship"
+                  className="block py-3 px-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Internship
+                </Link>
                 <div className="grid grid-cols-2 gap-2 pt-3 mt-2 border-t border-border/60">
                   <Button
                     variant="outline"
