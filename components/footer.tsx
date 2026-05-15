@@ -23,6 +23,7 @@ const eventLinks = [
   { href: "#agenda", label: "Agenda" },
   { href: "#venue", label: "Venue" },
   { href: "/tickets", label: "Tickets" },
+  { href: "/internship", label: "Internship" },
   { href: "#sponsors", label: "Sponsor us" },
 ]
 
